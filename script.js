@@ -1,11 +1,13 @@
 var form = document.getElementById("form");
-function submit() {
+
+function submit(event) {
     event.preventDefault();
-    var score = document.querySelector("input[name=selector]:checked").value;
+    var score = document.querySelector("input[name='selector']:checked").value;
     document.querySelector("#score").textContent = score;
     document.querySelector("form").style.display = "none";
     document.querySelector(".thankyou-container").style.display = "flex";
-    return false;
 };
-form.addEventListener('submit', submit);
+
+document.getElementById("submit").addEventListener("click", submit);
+
 
